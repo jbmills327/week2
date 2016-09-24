@@ -24,9 +24,22 @@ if (postalCode.length === 5 || postalCode.charAt(5) === "-") {
 };
 
 var state = prompt("What is your states two letter abbreviation?");
+var capsLock = state.toUpperCase();
 
 if (state.length === 2) {
-    alert("That is a valid state abbreviation");
+    alert("Thank you " + capsLock + " is a valid state abbreviation");
 } else {
     alert("Please enter a two letter state abbreviation");
+};
+
+var married = prompt("Are you married?");
+var marriedCaps = married.toUpperCase();
+
+if (marriedCaps == "YES") {
+    alert("Good for you.")
+} else if (marriedCaps == "NO") {
+    alert("That's ok, there are plenty of fish in the sea.  Since you're presumambly human it shouldn't matter" +
+        " how many fish in the sea but who I am to judge");
+} else {
+    alert("It's complicated?");
 };
