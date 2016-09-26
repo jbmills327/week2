@@ -71,6 +71,9 @@ function tiny(moreNumbers) {
 console.log(tiny(-6));
 
 function getSeconds(timeForm) {
-    var seperateTime = timeForm.split(" : ");
+    var seperateTime = timeForm.split(":");
+    var newSeconds = Number(seperateTime[0]) * 60 + Number(seperateTime[1]);
+    return newSeconds;
+};
 
-}
+console.log(getSeconds("4:35"));
