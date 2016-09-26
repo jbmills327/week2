@@ -1,51 +1,45 @@
-var howMany = Number(prompt("How many victims do you have?"));
-// var victims = [];
+// var howMany = Number(prompt("How many victims do you have?"));
+
+
+
 
 function needSomeone() {
     var victims = [];
-    for (var i = 0; i < howMany; i++) {
+    var yep = confirm("Do you have someone who needs help?");
+    // for (var i = 0; i < howMany; i++) {
+    while (yep) {
         var help = {};
         help.name = (prompt("What is the name of this victim?"));
         help.street = (prompt("What is the street?"));
         help.phoneNumber = (prompt("What is the phone number?"));
         victims.push(help);
+        yep = confirm("Do you have another victim to add?")
     }
     return victims;
 }
+
 
 console.log(needSomeone());
 
 
 
-// needSomeone();
 
 
-var numberOfVolunteers = +(prompt("How many volunteers are available?"));
-// var volunteers = [];
+// var numberOfVolunteers = +(prompt("How many volunteers are available?"));
 
 function hereToHelp() {
     var helpers = [];
-    for (var i = 0; i < numberOfVolunteers; i++) {
+    var yep = confirm("Do you have someone who can help?");
+    while (yep) {
+        // for (var i = 0; i < numberOfVolunteers; i++) {
         var help = {};
         help.name = (prompt("What is the name of this volunteers?"));
         help.street = (prompt("What street does this volunteer live on?"));
         help.phoneNumber = (prompt("What is the volunteers phone number?"));
         helpers.push(help);
+        yep = confirm("Do you have more volunteers to add?")
     }
     return helpers;
 }
 
-console.log(hereToHelp());
-//
-// for (var i = 0; i < numberOfVolunteers; i++) {
-//     var help = {};
-//     help.name = (prompt("What is the name of this volunteer?"));
-//     help.street = (prompt("What street does this volunteer live on?"));
-//     help.phoneNumber = (prompt("What is the phone number for this volunteer"));
-//     volunteers.push(help);
-// }
-
-
-
-// console.log(victims);
-// console.log(volunteers);
+console.log(hereToHelp());;
