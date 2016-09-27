@@ -7,3 +7,12 @@ function letterCapitalize(words) {
     return newWords;
 }
 console.log(letterCapitalize('This is a sentence'));
+
+
+
+function wordCount(moreWords) {
+    var anotherArray = moreWords.split(" ");
+    return anotherArray.length;
+}
+
+console.log(wordCount("How many words is this now?"));
