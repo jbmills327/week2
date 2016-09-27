@@ -1,5 +1,5 @@
 // var howMany = Number(prompt("How many victims do you have?"));
-
+// var victims = [];
 
 
 
@@ -20,7 +20,6 @@ function needSomeone() {
 
 
 console.log(needSomeone());
-
 
 
 
