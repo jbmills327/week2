@@ -1,42 +1,29 @@
-// var el = document.getElementById("launch");
-
-// document.addEventListener("DOMContentLoaded", function() {
-//     document.getElementById("launch").addEventListener("click", function() {
-//         var newDiv = document.createElement("div");
-//         newDiv.style.backgroundColor = "black";
-//         newDiv.style.color = "white";
-//         var newContent = document.createTextNode("This is a test");
-//         newDiv.appendChild(newContent);
-//
-//         var currentDiv = document.getElementById("canvas");
-//         document.body.insertBefore(newDiv, currentDiv);
-//     });
-// });
-
-document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("launch").addEventListener("click", createRocket);
-});
-
-
 function rocketLaunch() {
+    // creates rocket and sets starting point.
+    var rocket = document.createElement("div")
+    rocket.className = "rocketsInFlight";
+    var currentDiv = document.querySelector("#launchPad");
+    document.getElementById("canvas").insertBefore(rocket, currentDiv);
+    var initialVelocityY = Math.floor(Math.random() * 10) + 1;
+    var initialVelocityX = Math.floor(Math.random() * 10) + 1;
+    rocket.style.top = "94vh";
+    rocket.style.left = (Math.floor(Math.random() * 100) + 1) + "vw";
 
-    var newDiv = document.createElement("div");
-    newDiv.style.backgroundColor = "black";
-    newDiv.style.color = "white";
-    var newContent = document.createTextNode("This is a test");
-    newDiv.appendChild(newContent);
 
-    var currentDiv = document.getElementById("canvas");
-    document.body.insertBefore(newDiv, currentDiv);
-};
 
-function createRocket() {
-    var rocket = document.createElement("div");
-    rocket.style.left = "50vw";
-    rocket.style.bottom = "0vh";
-    rocket.style.width = "10px";
-    rocket.style.height = "15px";
-    rocket.style.backgroundColor = "black";
-    var newContent = document.createTextNode("B");
-    rocket.appendChild(newContent);
+    var start = null;
+
+
+    function step(timestamp) {
+        if (!start) start = timestamp;
+        var progress = timestamp - start;
+        rocket.style.top = Math.min(progress / 10, 200) + "vw";
+        if (progress < 2000) {
+            window.requestAnimationFrame(step);
+        }
+    }
+
+    window.requestAnimationFrame(step);
 }
+
+setInterval(rocketLaunch, 100)

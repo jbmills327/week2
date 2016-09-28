@@ -6,13 +6,36 @@
 
 #canvas {
     /*background-color: black;*/
-    width: 100%;
+    position: relative;
+    width: 100vw;
     height: 100vh;
 }
 
 button {
     position: fixed;
     top: 90vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.rocketsInFlight {
+    position: absolute;
+    width: 10px;
+    height: 20px;
+    background-color: purple;
+    border: 1px solid black;
+    /*top: 96vh;
+    left: 50%;
+    transform: translate(-50%, -50%);*/
+}
+
+#launchPad {
+    position: fixed;
+    width: 200px;
+    height: 15px;
+    background-color: black;
+    border: 1px solid green;
+    top: 98vh;
     left: 50%;
     transform: translate(-50%, -50%);
 }
